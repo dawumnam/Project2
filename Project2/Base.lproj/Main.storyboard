@@ -19,6 +19,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3za-bf-jYG">
                                 <rect key="frame" x="107" y="100" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3za-bf-jYG" secondAttribute="height" multiplier="2:1" id="fuf-cu-jMb"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7yY-oB-p9k"/>
@@ -26,6 +29,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-iV-dAs">
                                 <rect key="frame" x="107" y="230" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qgl-iV-dAs" secondAttribute="height" multiplier="2:1" id="RiY-zm-OBS"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozv-6a-kPM"/>
@@ -33,6 +39,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuZ-WP-ttU">
                                 <rect key="frame" x="107" y="360" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZuZ-WP-ttU" secondAttribute="height" multiplier="2:1" id="U3h-Hi-HxI"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gkt-Zp-lJ4"/>
@@ -42,11 +51,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ZuZ-WP-ttU" firstAttribute="height" secondItem="Qgl-iV-dAs" secondAttribute="height" id="DAz-4F-adr"/>
                             <constraint firstItem="3za-bf-jYG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="DaH-88-54b"/>
                             <constraint firstItem="Qgl-iV-dAs" firstAttribute="top" secondItem="3za-bf-jYG" secondAttribute="bottom" constant="30" id="RPc-Un-c1l"/>
+                            <constraint firstItem="Qgl-iV-dAs" firstAttribute="height" secondItem="3za-bf-jYG" secondAttribute="height" id="ZrG-w3-kGq"/>
                             <constraint firstItem="ZuZ-WP-ttU" firstAttribute="centerX" secondItem="Qgl-iV-dAs" secondAttribute="centerX" id="kbA-TB-Eo6"/>
                             <constraint firstItem="ZuZ-WP-ttU" firstAttribute="top" secondItem="Qgl-iV-dAs" secondAttribute="bottom" constant="30" id="mOh-Cc-Rkx"/>
                             <constraint firstItem="3za-bf-jYG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="o42-mW-6vK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZuZ-WP-ttU" secondAttribute="bottom" constant="20" id="pAV-od-Bjt"/>
                             <constraint firstItem="Qgl-iV-dAs" firstAttribute="centerX" secondItem="3za-bf-jYG" secondAttribute="centerX" id="tek-Su-adf"/>
                         </constraints>
                     </view>

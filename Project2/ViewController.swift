@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var highestScore: Int!
+    var isHighestAlertedAlready: Bool = false
 
 
     @IBOutlet weak var button1: UIButton!
@@ -22,6 +25,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(updateScore))
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+        let defaults = UserDefaults.standard
+        highestScore = defaults.integer(forKey: "highestScore")
+     
         askQuestion()
 
         // Do any additional setup after loading the view.
@@ -51,6 +57,8 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = "Corret"
             score+=1
+            setHighestScoreAndAlert()
+            
         } else {
             title = "Wrong"
             score-=1
@@ -65,6 +73,20 @@ class ViewController: UIViewController {
         let vc = UIAlertController(title: "Score", message: String(score), preferredStyle: .alert)
         vc.addAction(UIAlertAction(title: "OK", style: .default))
         present(vc, animated: true)
+    }
+    
+    func setHighestScoreAndAlert() {
+        if score > highestScore {
+            highestScore = score
+            if !isHighestAlertedAlready {
+                isHighestAlertedAlready.toggle()
+                let ac = UIAlertController(title: "New Record!", message: "Congratulations! Your score \(highestScore!) is new record!", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default))
+                present(ac, animated: true)
+            }
+            let defaults = UserDefaults.standard
+            defaults.set(highestScore, forKey: "highestScore")
+        }
     }
     
 }
