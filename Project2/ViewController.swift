@@ -54,16 +54,19 @@ class ViewController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: []) {
+            sender.frame.size.width -= 5
+            sender.frame.size.height -= 5
+
+        }
         if sender.tag == correctAnswer {
             title = "Corret"
             score+=1
             setHighestScoreAndAlert()
-            
         } else {
             title = "Wrong"
             score-=1
         }
-        print(sender.tag)
         let ac = UIAlertController(title: title, message: "Your score is \(score).",preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         present(ac, animated: true)
